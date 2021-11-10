@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* {
+        box-sizing: border-box;
+      } */
+    .column {
+
+      float: left;
+      width: 17%;
+      margin: 10px;
+      border-radius: 15px;
+      border: 2px solid #283044;
+      background-color: #BFA89E;
+      text-indent: 15px;
+      box-sizing: border-box;
+      /* padding-left: 15px;
+        padding-bottom: 15px; */
+      padding: .1em 1em .5em 1em;
+      column-count: auto;
+    }
+
+    .results {
+      border-radius: 15px;
+      padding: 1em 1em .5em 1em;
+    }
+
+    /* .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      } */
+    body {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      /* margin: auto; */
+      background-color: #78A1BB;
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-indent: 15px;">Choose what craft items you want to make:</h1>
+  <div class="row">
+    <!-- Bombs div -->
+    <div class="column">
+      <h3>Bombs</h3>
+      <label><input type="checkbox" id="CherryBomb" name="Bombs" />Cherry Bomb </br></label>
+      <label><input type="checkbox" id="Bomb" name="Bombs" />Bomb</br></label>
+      <label><input type="checkbox" id="MegaBomb" name="Bombs" />Mega Bomb</br></label>
+      <br><label><input type="checkbox" id="Bombs" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- Gates div -->
+    <div class="column">
+      <h3>Gates</h3>
+      <label><input type="checkbox" id="Gate" name="Gates" />Gate</br></label>
+      <label><input type="checkbox" id="WoodFence" name="Gates" />Wood Fence</br></label>
+      <label><input type="checkbox" id="StoneFence" name="Gates" />Stone Fence</br></label>
+      <label><input type="checkbox" id="IronFence" name="Gates" />Iron Fence</br></label>
+      <label><input type="checkbox" id="HardwoodFence" name="Gates" />Hardwood Fence</br></label>
+      <br><label><input type="checkbox" id="Gates" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- Sprinklers div -->
+    <div class="column">
+      <h3>Sprinklers</h3>
+      <label><input type="checkbox" id="Sprinkler" name="Sprinklers" />Sprinkler</br></label>
+      <label><input type="checkbox" id="QualitySprinkler" name="Sprinklers" />Quality Sprinkler</br></label>
+      <label><label><input type="checkbox" id="IridiumSprinkler" name="Sprinklers" />Iridium Sprinkler</br></label>
+        <br><label><input type="checkbox" id="Sprinklers" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- Artisan Equipment div -->
+    <div class="column">
+      <h3>Artisan Equipment</h3>
+      <label><input type="checkbox" id="MayonnaiseMachine" name="ArtisanEquipment" /> Mayonnaise Machine
+        </br></label>
+      <label><input type="checkbox" id="BeeHouse" name="ArtisanEquipment" />Bee House</br></label>
+      <label><input type="checkbox" id="PreservesJar" name="ArtisanEquipment" />Preserves Jar</br></label>
+      <label><input type="checkbox" id="CheesePress" name="ArtisanEquipment" />Cheese Press</br></label>
+      <label><input type="checkbox" id="Loom" name="ArtisanEquipment" />Loom</br></label>
+      <label><input type="checkbox" id="Keg" name="ArtisanEquipment" />Keg</br></label>
+      <label><input type="checkbox" id="OilMaker" name="ArtisanEquipment" />Oil Maker</br></label>
+      <label><input type="checkbox" id="Cask" name="ArtisanEquipment" />Cask</br></label>
+      <br><label><input type="checkbox" id="ArtisanEquipment" onclick="toggle(this)" /> Select/Unselect All
+        </br></label>
+    </div>
+    <!-- Fertilizers div -->
+    <div class="column">
+      <h3>Fertilizers</h3>
+      <label><input type="checkbox" id="BasicFertilizer" name="Fertilizers" />BasicFertilizer </br></label>
+      <label><input type="checkbox" id="BasicRetainingSoil" name="Fertilizers" />BasicRetainingSoil </br></label>
+      <label><input type="checkbox" id="DeluxeFertilizer" name="Fertilizers" />DeluxeFertilizer </br></label>
+      <label><input type="checkbox" id="DeluxeRetainingSoil" name="Fertilizers" />DeluxeRetainingSoil </br></label>
+      <label><input type="checkbox" id="DeluxeSpeedGro" name="Fertilizers" />DeluxeSpeedGro </br></label>
+      <label><input type="checkbox" id="HyperSpeedGro" name="Fertilizers" />HyperSpeedGro </br></label>
+      <label><input type="checkbox" id="QualityFertilizer" name="Fertilizers" />QualityFertilizer </br></label>
+      <label><input type="checkbox" id="QualityRetainingSoil" name="Fertilizers" />QualityRetainingSoil </br></label>
+      <label><input type="checkbox" id="SpeedGro" name="Fertilizers" />SpeedGro </br></label>
+      <label><input type="checkbox" id="TreeFertilizer" name="Fertilizers" />TreeFertilizer </br></label>
+      <br><label><input type="checkbox" id="Fertilizers" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- Seeds div -->
+    <div class="column">
+      <h3>Seeds</h3>
+      <label><input type="checkbox" id="WildSeeds_Sp" name="Seeds" />WildSeeds_Sp </br></label>
+      <label><input type="checkbox" id="WildSeeds_Su" name="Seeds" />WildSeeds_Su </br></label>
+      <label><input type="checkbox" id="WildSeeds_Fa" name="Seeds" />WildSeeds_Fa </br></label>
+      <label><input type="checkbox" id="WildSeeds_Wi" name="Seeds" />WildSeeds_Wi </br></label>
+      <label><input type="checkbox" id="AncientSeeds" name="Seeds" />AncientSeeds </br></label>
+      <label><input type="checkbox" id="GrassStarter" name="Seeds" />GrassStarter </br></label>
+      <label><input type="checkbox" id="TeaSapling" name="Seeds" />TeaSapling </br></label>
+      <label><input type="checkbox" id="FiberSeeds" name="Seeds" />FiberSeeds </br></label>
+      <br><label><input type="checkbox" id="Seeds" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- Floors div -->
+    <div class="column">
+      <h3>Floors</h3>
+      <label><input type="checkbox" id="WoodFloor" name="Floors" />WoodFloor </br></label>
+      <label><input type="checkbox" id="RusticPlankFloor" name="Floors" />RusticPlankFloor </br></label>
+      <label><input type="checkbox" id="StrawFloor" name="Floors" />StrawFloor </br></label>
+      <label><input type="checkbox" id="WeatheredFloor" name="Floors" />WeatheredFloor </br></label>
+      <label><input type="checkbox" id="CrystalFloor" name="Floors" />CrystalFloor </br></label>
+      <label><input type="checkbox" id="StoneFloor" name="Floors" />StoneFloor </br></label>
+      <label><input type="checkbox" id="StoneWalkwayFloor" name="Floors" />StoneWalkwayFloor </br></label>
+      <label><input type="checkbox" id="BrickFloor" name="Floors" />BrickFloor </br></label>
+      <label><input type="checkbox" id="WoodPath" name="Floors" />WoodPath </br></label>
+      <label><input type="checkbox" id="GravelPath" name="Floors" />GravelPath </br></label>
+      <label><input type="checkbox" id="CobblestonePath" name="Floors" />CobblestonePath </br></label>
+      <label><input type="checkbox" id="SteppingStonePath" name="Floors" />SteppingStonePath </br></label>
+      <label><input type="checkbox" id="CrystalPath" name="Floors" />CrystalPath </br></label>
+      <br><label><input type="checkbox" id="Floors" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- Fishing div -->
+    <div class="column">
+      <h3>Fishing</h3>
+      <label><input type="checkbox" id="Spinner" name="Fishing" />Spinner </br></label>
+      <label><input type="checkbox" id="TrapBobber" name="Fishing" />TrapBobber </br></label>
+      <label><input type="checkbox" id="CorkBobber" name="Fishing" />CorkBobber </br></label>
+      <label><input type="checkbox" id="QualityBobber" name="Fishing" />QualityBobber </br></label>
+      <label><input type="checkbox" id="TreasureHunter" name="Fishing" />TreasureHunter </br></label>
+      <label><input type="checkbox" id="DressedSpinner" name="Fishing" />DressedSpinner </br></label>
+      <label><input type="checkbox" id="BarbedHook" name="Fishing" />BarbedHook </br></label>
+      <label><input type="checkbox" id="Magnet" name="Fishing" />Magnet </br></label>
+      <label><input type="checkbox" id="Bait" name="Fishing" />Bait </br></label>
+      <label><input type="checkbox" id="WildBait" name="Fishing" />WildBait </br></label>
+      <label><input type="checkbox" id="MagicBait" name="Fishing" />MagicBait </br></label>
+      <label><input type="checkbox" id="CrabPot" name="Fishing" />CrabPot </br></label>
+      <br><label><input type="checkbox" id="Fishing" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- Rings div -->
+    <div class="column">
+      <h3>Rings</h3>
+      <label><input type="checkbox" id="SturdyRing" name="Rings" />SturdyRing </br></label>
+      <label><input type="checkbox" id="WarriorRing" name="Rings" />WarriorRing </br></label>
+      <label><input type="checkbox" id="RingofYoba" name="Rings" />RingofYoba </br></label>
+      <label><input type="checkbox" id="ThornsRing" name="Rings" />ThornsRing </br></label>
+      <label><input type="checkbox" id="GlowstoneRing" name="Rings" />GlowstoneRing </br></label>
+      <label><input type="checkbox" id="IridiumBand" name="Rings" />IridiumBand </br></label>
+      <br><label><input type="checkbox" id="Rings" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- EdibleItems div -->
+    <div class="column">
+      <h3>EdibleItems</h3>
+      <label><input type="checkbox" id="FieldSnack" name="EdibleItems" />FieldSnack </br></label>
+      <label><input type="checkbox" id="BugSteak" name="EdibleItems" />BugSteak </br></label>
+      <label><input type="checkbox" id="LifeElixir" name="EdibleItems" />LifeElixir </br></label>
+      <label><input type="checkbox" id="OilofGarlic" name="EdibleItems" />OilofGarlic </br></label>
+      <br><label><input type="checkbox" id="EdibleItems" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- Consumables div -->
+    <div class="column">
+      <h3>Consumables</h3>
+      <label><input type="checkbox" id="MonsterMusk" name="Consumables" />Monster Musk </br></label>
+      <label><input type="checkbox" id="FairyDust" name="Consumables" />Fairy Dust </br></label>
+      <label><input type="checkbox" id="WarpTotemBeach" name="Consumables" />Warp Totem Beach </br></label>
+      <label><input type="checkbox" id="WarpTotemMountains" name="Consumables" />Warp Totem Mountains </br></label>
+      <label><input type="checkbox" id="WarpTotemFarm" name="Consumables" />Warp Totem Farm </br></label>
+      <label><input type="checkbox" id="WarpTotemDesert" name="Consumables" />Warp Totem Desert </br></label>
+      <label><input type="checkbox" id="WarpTotemIsland" name="Consumables" />Warp Totem Island </br></label>
+      <label><input type="checkbox" id="RainTotem" name="Consumables" />Rain Totem </br></label>
+      <br><label><input type="checkbox" id="Consumables" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- Lighting div -->
+    <div class="column">
+      <h3>Lighting</h3>
+      <label><input type="checkbox" id="Torch" name="Lighting" />Torch </br></label>
+      <label><input type="checkbox" id="Campfire" name="Lighting" />Campfire </br></label>
+      <label><input type="checkbox" id="WoodenBrazier" name="Lighting" />WoodenBrazier </br></label>
+      <label><input type="checkbox" id="StoneBrazier" name="Lighting" />StoneBrazier </br></label>
+      <label><input type="checkbox" id="GoldBrazier" name="Lighting" />GoldBrazier </br></label>
+      <label><input type="checkbox" id="CarvedBrazier" name="Lighting" />CarvedBrazier </br></label>
+      <label><input type="checkbox" id="StumpBrazier" name="Lighting" />StumpBrazier </br></label>
+      <label><input type="checkbox" id="BarrelBrazier" name="Lighting" />BarrelBrazier </br></label>
+      <label><input type="checkbox" id="SkullBrazier" name="Lighting" />SkullBrazier </br></label>
+      <label><input type="checkbox" id="MarbleBrazier" name="Lighting" />MarbleBrazier </br></label>
+      <label><input type="checkbox" id="WoodLamppost" name="Lighting" />WoodLamppost </br></label>
+      <label><input type="checkbox" id="IronLamppost" name="Lighting" />IronLamppost </br></label>
+      <label><input type="checkbox" id="JackOLantern" name="Lighting" />JackOLantern </br></label>
+      <br><label><input type="checkbox" id="Lighting" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- RefiningEquipment div -->
+    <div class="column">
+      <h3>RefiningEquipment</h3>
+      <label><input type="checkbox" id="CharcoalKiln" name="RefiningEquipment" />CharcoalKiln </br></label>
+      <label><input type="checkbox" id="Crystalarium" name="RefiningEquipment" />Crystalarium </br></label>
+      <label><input type="checkbox" id="Furnace" name="RefiningEquipment" />Furnace </br></label>
+      <label><input type="checkbox" id="LightningRod" name="RefiningEquipment" />LightningRod </br></label>
+      <label><input type="checkbox" id="SolarPanel" name="RefiningEquipment" />SolarPanel </br></label>
+      <label><input type="checkbox" id="RecyclingMachine" name="RefiningEquipment" />RecyclingMachine </br></label>
+      <label><input type="checkbox" id="SeedMaker" name="RefiningEquipment" />SeedMaker </br></label>
+      <label><input type="checkbox" id="SlimeIncubator" name="RefiningEquipment" />SlimeIncubator </br></label>
+      <label><input type="checkbox" id="OstrichIncubator" name="RefiningEquipment" />OstrichIncubator </br></label>
+      <label><input type="checkbox" id="SlimeEggPress" name="RefiningEquipment" />SlimeEggPress </br></label>
+      <label><input type="checkbox" id="Tapper" name="RefiningEquipment" />Tapper </br></label>
+      <label><input type="checkbox" id="HeavyTapper" name="RefiningEquipment" />HeavyTapper </br></label>
+      <label><input type="checkbox" id="WormBin" name="RefiningEquipment" />WormBin </br></label>
+      <label><input type="checkbox" id="BoneMill" name="RefiningEquipment" />BoneMill </br></label>
+      <label><input type="checkbox" id="GeodeCrusher" name="RefiningEquipment" />GeodeCrusher </br></label>
+      <br><label><input type="checkbox" id="RefiningEquipment" onclick="toggle(this)" /> Select/Unselect All
+        </br></label>
+    </div>
+    <!-- Furniture div -->
+    <div class="column">
+      <h3>Furniture</h3>
+      <label><input type="checkbox" id="TuboFlowers" name="Furniture" />TuboFlowers </br></label>
+      <label><input type="checkbox" id="WickedStatue" name="Furniture" />WickedStatue </br></label>
+      <label><input type="checkbox" id="FluteBlock" name="Furniture" />FluteBlock </br></label>
+      <label><input type="checkbox" id="DrumBlock" name="Furniture" />DrumBlock </br></label>
+      <br><label><input type="checkbox" id="Furniture" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- StorageEquipment div -->
+    <div class="column">
+      <h3>StorageEquipment</h3>
+      <label><input type="checkbox" id="Chest" name="StorageEquipment" />Chest </br></label>
+      <label><input type="checkbox" id="StoneChest" name="StorageEquipment" />StoneChest </br></label>
+      <br><label><input type="checkbox" id="StorageEquipment" onclick="toggle(this)" /> Select/Unselect All
+        </br></label>
+    </div>
+    <!-- Signs div -->
+    <div class="column">
+      <h3>Signs</h3>
+      <label><input type="checkbox" id="WoodSign" name="Signs" />WoodSign </br></label>
+      <label><input type="checkbox" id="StoneSign" name="Signs" />StoneSign </br></label>
+      <label><input type="checkbox" id="DarkSign" name="Signs" />DarkSign </br></label>
+      <br><label><input type="checkbox" id="Signs" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- FarmingMisc div -->
+    <div class="column">
+      <h3>FarmingMisc</h3>
+      <label><input type="checkbox" id="GardenPot" name="FarmingMisc" />GardenPot </br></label>
+      <label><input type="checkbox" id="Scarecrow" name="FarmingMisc" />Scarecrow </br></label>
+      <label><input type="checkbox" id="DeluxeScarecrow" name="FarmingMisc" />DeluxeScarecrow </br></label>
+      <br><label><input type="checkbox" id="FarmingMisc" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- MiningMisc div -->
+    <div class="column">
+      <h3>MiningMisc</h3>
+      <label><input type="checkbox" id="Staircase" name="MiningMisc" />Staircase </br></label>
+      <label><input type="checkbox" id="ExplosiveAmmo" name="MiningMisc" />ExplosiveAmmo </br></label>
+      <label><input type="checkbox" id="TransmuteFe" name="MiningMisc" />TransmuteFe </br></label>
+      <label><input type="checkbox" id="TransmuteAu" name="MiningMisc" />TransmuteAu </br></label>
+      <br><label><input type="checkbox" id="MiningMisc" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+    <!-- Misc div -->
+    <div class="column">
+      <h3>Misc</h3>
+      <label><input type="checkbox" id="MiniJukebox" name="Misc" />MiniJukebox </br></label>
+      <label><input type="checkbox" id="MiniObelisk" name="Misc" />MiniObelisk </br></label>
+      <label><input type="checkbox" id="FarmComputer" name="Misc" />FarmComputer </br></label>
+      <label><input type="checkbox" id="Hopper" name="Misc" />Hopper </br></label>
+      <label><input type="checkbox" id="CookoutKit" name="Misc" />CookoutKit </br></label>
+      <br><label><input type="checkbox" id="Misc" onclick="toggle(this)" /> Select/Unselect All </br></label>
+    </div>
+
+    <!-- Button for calculate materials -->
+    <button type="button" id="button_calculate" class="button-3">Calculate materials</button>
+  </div>
+  <!-- Results div -->
+  <div id="results" class="results">
+  </div>
+</body>
+<script src="./crafiting_stardew.js"></script>
+
+</html>
