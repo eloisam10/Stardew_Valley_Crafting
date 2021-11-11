@@ -1,0 +1,72 @@
+/* <style type="text/css"> */
+@font-face {
+  font-family: Font_stardew_title;
+  src: url(./Font/Stardew_Valley_ALL_CAPS.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: stardew_menu;
+  src: url(./Font/Stardew_Valley.ttf) format("truetype");
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column-wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.flex-item {
+  flex-basis: auto;
+  order: 5;
+  float: left;
+  width: 17%;
+  margin: 10px;
+  border-radius: 15px;
+  border: 2px solid #283044;
+  background-color: #bfa89e;
+  text-indent: 15px;
+  box-sizing: border-box;
+  /* padding-left: 15px;
+      padding-bottom: 15px; */
+  padding: 0.1em 1em 0.5em 1em;
+  column-count: auto;
+  font-family: stardew_menu;
+}
+
+.results {
+  border-radius: 15px;
+  padding: 1em 1em 0.5em 1em;
+  font-family: stardew_menu;
+  flex-flow: row-wrap;
+}
+.button {
+  flex-basis: auto;
+  font-family: stardew_menu;
+  font-size: larger;
+}
+
+/* .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    } */
+body {
+  /* margin: auto; */
+  background-color: rgb(180, 187, 192);
+  font-size: 130%;
+  font-family: stardew_menu;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(136, 73, 46);
+  font-family: Font_stardew_title;
+  /* background-color: white; */
+}
+h2 {
+  font-size: 140%;
+}
+
+/* </style> */

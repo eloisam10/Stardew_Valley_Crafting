@@ -425,7 +425,11 @@ function toggle(source) {
     for (let index = 0; index < all_categories.length; index++) {
       //Checks if the checkbox of "select/unselect all" is checked (select all)
       // Or if the items of the category is checked (unselect all)
-      if (selected_category.checked || all_categories[index].checked) {
+      //Both statements can't be true at the same time, or will unselect everything
+      if (
+        (selected_category.checked || all_categories[index].checked) &
+        !(selected_category.checked && all_categories[index].checked)
+      ) {
         all_categories[index].checked = source.checked;
       }
     }
