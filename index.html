@@ -7,9 +7,15 @@
 
 <body>
   <h1>Stardew Valley Crafting Calculator</h1>
-  <h2 style="text-indent: 45px;">Chose what craft items you want to make:</h2>
+  <div class="flex-container"><p>This is a tool where you can calculate all the materials needed to complete the achievement "Craft Master" from the game Stardew Valley, created and published by Eric Barone. 
+  </br>This list has all the craftable items from the game, including the ones from the 1.5 update, so beware of spoilers!
+  </br>The wedding ring is only available in the Multiplayer and it's not necessary for the achievement, so it's not included.
+</br> The material necessary to craft the Crab Pot is not from the Trapper profession.
+</br> All the images and information are from the Stardew Valley Community Wiki.
+  </p>
+  <!-- <h2 style="text-indent: 45px;">Chose what craft items you want to make:</h2> -->
   <!-- Button for calculate materials -->
-  <button type="button" id="button_calculate" class="button">Calculate materials</button>
+  <button type="button" id="button_calculate" class="button">Calculate materials</button></div>
   <!-- Results div -->
   <div id="results" class="results">
   </div>
@@ -17,9 +23,11 @@
     <!-- Bombs div -->
     <div class="flex-item">
       <h2>Bombs</h2>
-      <label class="input_single"><input type="checkbox" id="CherryBomb" name="Bombs" />Cherry Bomb<img
-          src="https://stardewcommunitywiki.com/mediawiki/images/1/1b/Cherry_Bomb.png" height="24"
-          width="24" margin=right></br></label>
+      <label class="input_single">
+        <input type="checkbox" id="CherryBomb" name="Bombs" />Cherry Bomb
+        <img src="https://stardewcommunitywiki.com/mediawiki/images/1/1b/Cherry_Bomb.png" height="24" width="24"
+          margin=right></br></label>
+
       <label class="input_single"><input type="checkbox" id="Bomb" name="Bombs" />Bomb<img
           src="https://stardewcommunitywiki.com/mediawiki/images/3/3b/Bomb.png" height="24" width="24"></br></label>
       <label class="input_single"><input type="checkbox" id="MegaBomb" name="Bombs" />Mega Bomb<img
@@ -32,271 +40,479 @@
     <!-- Gates div -->
     <div class="flex-item">
       <h2>Gates</h2>
-      <div class="row_box_items">
-        <div class="images">
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/9/94/Gate.png" height="24" width="24"></div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/1/1e/Wood_Fence.png" height="24" width="24">
-          </div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/2/2d/Stone_Fence.png" height="24" width="24">
-          </div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/9/9d/Iron_Fence.png" height="24" width="24">
-          </div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/5/5c/Hardwood_Fence.png" height="24"
-              width="24"></div>
-        </div>
-        <div class="inputs">
-          <label><input type="checkbox" id="Gate" name="Gates" />Gate</br></label>
-          <label><input type="checkbox" id="WoodFence" name="Gates" />Wood Fence</br></label>
-          <label><input type="checkbox" id="StoneFence" name="Gates" />Stone Fence</br></label>
-          <label><input type="checkbox" id="IronFence" name="Gates" />Iron Fence</br></label>
-          <label><input type="checkbox" id="HardwoodFence" name="Gates" />Hardwood Fence</br></label>
-          <br><label><input type="checkbox" id="Gates" onclick="toggle(this)" /> Select/Unselect All </br></label>
-        </div>
-      </div>
+      <label class="input_single">
+        <input type="checkbox" id="Gate" name="Gates" />Gate<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/9/94/Gate.png" height="24" width="24" margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="WoodFence" name="Gates" />Wood Fence<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/1/1e/Wood_Fence.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="StoneFence" name="Gates" />Stone Fence<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/2/2d/Stone_Fence.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="IronFence" name="Gates" />Iron Fence<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/9/9d/Iron_Fence.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="HardwoodFence" name="Gates" />Hardwood Fence<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/5/5c/Hardwood_Fence.png" height="24" width="24"
+          margin=right> </br></label>
+      <br> <label> <input type="checkbox" id="Gates" onclick="toggle(this)" /> Select/Unselect All
+        </br> </label>
     </div>
     <!-- Sprinklers div -->
     <div class="flex-item">
       <h2>Sprinklers</h2>
-      <div class="row_box_items">
-        <div class="images">
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/0/08/Sprinkler.png" height="24" width="24">
-          </div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/a/af/Quality_Sprinkler.png" height="24"
-              width="24"></div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/9/90/Iridium_Sprinkler.png" height="24"
-              width="24">
-          </div>
-        </div>
-        <div class="inputs">
-          <label><input type="checkbox" id="Sprinkler" name="Sprinklers" />Sprinkler</br></label>
-          <label><input type="checkbox" id="QualitySprinkler" name="Sprinklers" />Quality Sprinkler</br></label>
-          <label><label><input type="checkbox" id="IridiumSprinkler" name="Sprinklers" />Iridium Sprinkler</br></label>
-            <br><label><input type="checkbox" id="Sprinklers" onclick="toggle(this)" /> Select/Unselect All
-              </br></label>
-        </div>
-      </div>
+      <label class="input_single">
+        <input type="checkbox" id="Sprinkler" name="Sprinklers" />Sprinkler<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/0/08/Sprinkler.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="QualitySprinkler" name="Sprinklers" />Quality Sprinkler<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/a/af/Quality_Sprinkler.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="IridiumSprinkler" name="Sprinklers" />Iridium
+        Sprinkler<img src="https://stardewcommunitywiki.com/mediawiki/images/9/90/Iridium_Sprinkler.png" height="24"
+           width="24" margin=right> </br></label>
+      <br> <label> <input type="checkbox" id="Sprinklers" onclick="toggle(this)" />Select/Unselect All
+        </br> </label>
     </div>
     <!-- Artisan Equipment div -->
     <div class="flex-item">
       <h2>Artisan Equipment</h2>
-      <div class="row_box_items">
-        <div class="images">
-          <div><img src="	https://stardewcommunitywiki.com/mediawiki/images/e/ef/Mayonnaise_Machine.png" height="24"
-              width="12">
-          </div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/c/ce/Bee_House.png" height="24" width="12">
-          </div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/1/1e/Preserves_Jar.png" height="24"
-              width="12"></div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/7/79/Cheese_Press.png" height="24"
-              width="12"></div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/3/3b/Loom.png" height="24" width="12"></div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/7/7c/Keg.png" height="24" width="12"></div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/c/c5/Oil_Maker.png" height="24" width="12">
-          </div>
-          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/7/7c/Cask.png" height="24" width="12">
-          </div>
-        </div>
-        <div class="inputs">
-          <label><input type="checkbox" id="MayonnaiseMachine" name="ArtisanEquipment" />Mayonnaise Machine
-            </br></label>
-          <label><input type="checkbox" id="BeeHouse" name="ArtisanEquipment" />Bee House</br></label>
-          <label><input type="checkbox" id="PreservesJar" name="ArtisanEquipment" />Preserves Jar</br></label>
-          <label><input type="checkbox" id="CheesePress" name="ArtisanEquipment" />Cheese Press</br></label>
-          <label><input type="checkbox" id="Loom" name="ArtisanEquipment" />Loom</br></label>
-          <label><input type="checkbox" id="Keg" name="ArtisanEquipment" />Keg</br></label>
-          <label><input type="checkbox" id="OilMaker" name="ArtisanEquipment" />Oil Maker</br></label>
-          <label><input type="checkbox" id="Cask" name="ArtisanEquipment" />Cask</br></label>
-          <br><label><input type="checkbox" id="ArtisanEquipment" onclick="toggle(this)" /> Select/Unselect All
-            </br></label>
-        </div>
-      </div>
+      <label class="input_single"><input type="checkbox" id="MayonnaiseMachine" name="ArtisanEquipment" />Mayonnaise
+        Machine<img src=" https://stardewcommunitywiki.com/mediawiki/images/e/ef/Mayonnaise_Machine.png" height="24"    
+                    width="12" margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="BeeHouse" name="ArtisanEquipment" />Bee House<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/c/ce/Bee_House.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="PreservesJar" name="ArtisanEquipment" />Preserves Jar<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/1/1e/Preserves_Jar.png" height="24"              
+          width="12" margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="CheesePress" name="ArtisanEquipment" />Cheese Press<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/7/79/Cheese_Press.png" height="24"              
+          width="12" margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="Loom" name="ArtisanEquipment" />Loom<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/3/3b/Loom.png" height="24" width="12" margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="Keg" name="ArtisanEquipment" />Keg<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/7/7c/Keg.png" height="24" width="12" margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="OilMaker" name="ArtisanEquipment" />Oil Maker<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/c/c5/Oil_Maker.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="Cask" name="ArtisanEquipment" />Cask<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/7/7c/Cask.png" height="24" width="12" margin=right>
+        </br></label>
+      <br><label><input type="checkbox" id="ArtisanEquipment" onclick="toggle(this)" /> Select/Unselect All
+        </br></label>
     </div>
     <!-- Fertilizers div -->
     <div class="flex-item">
       <h2>Fertilizers</h2>
-      <label><input type="checkbox" id="BasicFertilizer" name="Fertilizers" />Basic Fertilizer </br></label>
-      <label><input type="checkbox" id="BasicRetainingSoil" name="Fertilizers" />Basic Retaining Soil </br></label>
-      <label><input type="checkbox" id="DeluxeFertilizer" name="Fertilizers" />Deluxe Fertilizer </br></label>
-      <label><input type="checkbox" id="DeluxeRetainingSoil" name="Fertilizers" />Deluxe Retaining Soil </br></label>
-      <label><input type="checkbox" id="DeluxeSpeedGro" name="Fertilizers" />Deluxe Speed-Gro </br></label>
-      <label><input type="checkbox" id="HyperSpeedGro" name="Fertilizers" />Hyper Speed-Gro </br></label>
-      <label><input type="checkbox" id="QualityFertilizer" name="Fertilizers" />Quality Fertilizer </br></label>
-      <label><input type="checkbox" id="QualityRetainingSoil" name="Fertilizers" />Quality Retaining Soil </br></label>
-      <label><input type="checkbox" id="SpeedGro" name="Fertilizers" />Speed-Gro </br></label>
-      <label><input type="checkbox" id="TreeFertilizer" name="Fertilizers" />Tree Fertilizer </br></label>
+      <label class="input_single"><input type="checkbox" id="BasicFertilizer" name="Fertilizers" />Basic Fertilizer <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/9/9b/Basic_Fertilizer.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="BasicRetainingSoil" name="Fertilizers" />Basic Retaining
+        Soil <img src=" https://stardewcommunitywiki.com/mediawiki/images/c/c7/Basic_Retaining_Soil.png" height="24"
+          width="24" margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="DeluxeFertilizer" name="Fertilizers" />Deluxe Fertilizer
+        <img src=" https://stardewcommunitywiki.com/mediawiki/images/1/1c/Deluxe_Fertilizer.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="DeluxeRetainingSoil" name="Fertilizers" />Deluxe Retaining
+        Soil <img src=" https://stardewcommunitywiki.com/mediawiki/images/c/c3/Deluxe_Retaining_Soil.png" height="24"
+          width="24" margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="DeluxeSpeedGro" name="Fertilizers" />Deluxe Speed-Gro <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/6/6d/Deluxe_Speed-Gro.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="HyperSpeedGro" name="Fertilizers" />Hyper Speed-Gro <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/5/53/Hyper_Speed-Gro.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="QualityFertilizer" name="Fertilizers" />Quality Fertilizer
+        <img src=" https://stardewcommunitywiki.com/mediawiki/images/a/a0/Quality_Fertilizer.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="QualityRetainingSoil" name="Fertilizers" />Quality
+        Retaining Soil <img src=" https://stardewcommunitywiki.com/mediawiki/images/0/0a/Quality_Retaining_Soil.png"
+          height="24" width="24" margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="SpeedGro" name="Fertilizers" />Speed-Gro <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/9/94/Speed-Gro.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="TreeFertilizer" name="Fertilizers" />Tree Fertilizer <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/5/5d/Tree_Fertilizer.png" height="24" width="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="Fertilizers" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- Seeds div -->
     <div class="flex-item">
       <h2>Seeds</h2>
-      <label><input type="checkbox" id="WildSeeds_Sp" name="Seeds" />Wild Seeds (Spring Seeds) </br></label>
-      <label><input type="checkbox" id="WildSeeds_Su" name="Seeds" />Wild Seeds (Summer Seeds) </br></label>
-      <label><input type="checkbox" id="WildSeeds_Fa" name="Seeds" />Wild Seeds (Fall Seeds) </br></label>
-      <label><input type="checkbox" id="WildSeeds_Wi" name="Seeds" />Wild Seeds (Winter Seeds) </br></label>
-      <label><input type="checkbox" id="AncientSeeds" name="Seeds" />Ancient Seeds </br></label>
-      <label><input type="checkbox" id="GrassStarter" name="Seeds" />Grass Starter </br></label>
-      <label><input type="checkbox" id="TeaSapling" name="Seeds" />Tea Sapling </br></label>
-      <label><input type="checkbox" id="FiberSeeds" name="Seeds" />Fiber Seeds </br></label>
+      <label class="input_single"><input type="checkbox" id="WildSeeds_Sp" name="Seeds" />Wild Seeds (Spring Seeds) <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/3/39/Spring_Seeds.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WildSeeds_Su" name="Seeds" />Wild Seeds (Summer Seeds) <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/c/c4/Summer_Seeds.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WildSeeds_Fa" name="Seeds" />Wild Seeds (Fall Seeds) <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/5/55/Fall_Seeds.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WildSeeds_Wi" name="Seeds" />Wild Seeds (Winter Seeds) <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/d/dd/Winter_Seeds.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="AncientSeeds" name="Seeds" />Ancient Seeds <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/e/ec/Ancient_Seeds.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="GrassStarter" name="Seeds" />Grass Starter <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/1/14/Grass_Starter.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="TeaSapling" name="Seeds" />Tea Sapling <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/1/12/Tea_Sapling.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="FiberSeeds" name="Seeds" />Fiber Seeds <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/0/05/Fiber_Seeds.png" height="24" width="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="Seeds" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- Floors div -->
     <div class="flex-item">
       <h2>Floors</h2>
-      <label><input type="checkbox" id="WoodFloor" name="Floors" />Wood Floor </br></label>
-      <label><input type="checkbox" id="RusticPlankFloor" name="Floors" />Rustic Plank Floor </br></label>
-      <label><input type="checkbox" id="StrawFloor" name="Floors" />Straw Floor </br></label>
-      <label><input type="checkbox" id="WeatheredFloor" name="Floors" />Weathered Floor </br></label>
-      <label><input type="checkbox" id="CrystalFloor" name="Floors" />Crystal Floor </br></label>
-      <label><input type="checkbox" id="StoneFloor" name="Floors" />Stone Floor </br></label>
-      <label><input type="checkbox" id="StoneWalkwayFloor" name="Floors" />Stone Walkway Floor </br></label>
-      <label><input type="checkbox" id="BrickFloor" name="Floors" />Brick Floor </br></label>
-      <label><input type="checkbox" id="WoodPath" name="Floors" />Wood Path </br></label>
-      <label><input type="checkbox" id="GravelPath" name="Floors" />Gravel Path </br></label>
-      <label><input type="checkbox" id="CobblestonePath" name="Floors" />Cobblestone Path </br></label>
-      <label><input type="checkbox" id="SteppingStonePath" name="Floors" />Stepping Stone Path </br></label>
-      <label><input type="checkbox" id="CrystalPath" name="Floors" />Crystal Path </br></label>
+      <label class="input_single"><input type="checkbox" id="WoodFloor" name="Floors" />Wood Floor <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/5/58/Wood_Floor.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="RusticPlankFloor" name="Floors" />Rustic Plank Floor <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/9/9e/Rustic_Plank_Floor.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="StrawFloor" name="Floors" />Straw Floor <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/8/85/Straw_Floor.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WeatheredFloor" name="Floors" />Weathered Floor <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/2/2a/Weathered_Floor.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="CrystalFloor" name="Floors" />Crystal Floor <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/a/a4/Crystal_Floor.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="StoneFloor" name="Floors" />Stone Floor <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/4/4e/Stone_Floor.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="StoneWalkwayFloor" name="Floors" />Stone Walkway Floor <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/5/51/Stone_Walkway_Floor.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="BrickFloor" name="Floors" />Brick Floor <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/2/29/Brick_Floor.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WoodPath" name="Floors" />Wood Path <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/e/e3/Wood_Path.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="GravelPath" name="Floors" />Gravel Path <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/1/15/Gravel_Path.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="CobblestonePath" name="Floors" />Cobblestone Path <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/9/90/Cobblestone_Path.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="SteppingStonePath" name="Floors" />Stepping Stone Path <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/1/1b/Stepping_Stone_Path.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="CrystalPath" name="Floors" />Crystal Path <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/9/9b/Crystal_Path.png" height="24" width="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="Floors" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- Fishing div -->
     <div class="flex-item">
       <h2>Fishing</h2>
-      <label><input type="checkbox" id="Spinner" name="Fishing" />Spinner </br></label>
-      <label><input type="checkbox" id="TrapBobber" name="Fishing" />Trap Bobber </br></label>
-      <label><input type="checkbox" id="CorkBobber" name="Fishing" />Cork Bobber </br></label>
-      <label><input type="checkbox" id="QualityBobber" name="Fishing" />Quality Bobber </br></label>
-      <label><input type="checkbox" id="TreasureHunter" name="Fishing" />Treasure Hunter </br></label>
-      <label><input type="checkbox" id="DressedSpinner" name="Fishing" />Dressed Spinner </br></label>
-      <label><input type="checkbox" id="BarbedHook" name="Fishing" />Barbed Hook </br></label>
-      <label><input type="checkbox" id="Magnet" name="Fishing" />Magnet </br></label>
-      <label><input type="checkbox" id="Bait" name="Fishing" />Bait </br></label>
-      <label><input type="checkbox" id="WildBait" name="Fishing" />Wild Bait </br></label>
-      <label><input type="checkbox" id="MagicBait" name="Fishing" />Magic Bait </br></label>
-      <label><input type="checkbox" id="CrabPot" name="Fishing" />Crab Pot </br></label>
+      <label class="input_single"><input type="checkbox" id="Spinner" name="Fishing" />Spinner <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/7/7b/Spinner.png" height="24" width="24" margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="TrapBobber" name="Fishing" />Trap Bobber <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/d/da/Trap_Bobber.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="CorkBobber" name="Fishing" />Cork Bobber <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/0/0b/Cork_Bobber.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="QualityBobber" name="Fishing" />Quality Bobber <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/0/01/Quality_Bobber.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="TreasureHunter" name="Fishing" />Treasure Hunter <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/7/79/Treasure_Hunter.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="DressedSpinner" name="Fishing" />Dressed Spinner <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/e/e8/Dressed_Spinner.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="BarbedHook" name="Fishing" />Barbed Hook <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/4/4f/Barbed_Hook.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="Magnet" name="Fishing" />Magnet <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/8/8c/Magnet.png" height="24" width="24" margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="Bait" name="Fishing" />Bait <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/f/ff/Bait.png" height="24" width="24" margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="WildBait" name="Fishing" />Wild Bait <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/d/da/Wild_Bait.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="MagicBait" name="Fishing" />Magic Bait <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/5/58/Magic_Bait.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="CrabPot" name="Fishing" />Crab Pot <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/9/92/Crab_Pot.png" height="24" width="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="Fishing" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- Rings div -->
     <div class="flex-item">
       <h2>Rings</h2>
-      <label><input type="checkbox" id="SturdyRing" name="Rings" />Sturdy Ring </br></label>
-      <label><input type="checkbox" id="WarriorRing" name="Rings" />Warrior Ring </br></label>
-      <label><input type="checkbox" id="RingofYoba" name="Rings" />Ring of Yoba </br></label>
-      <label><input type="checkbox" id="ThornsRing" name="Rings" />Thorns Ring </br></label>
-      <label><input type="checkbox" id="GlowstoneRing" name="Rings" />Glowstone Ring </br></label>
-      <label><input type="checkbox" id="IridiumBand" name="Rings" />Iridium Band </br></label>
+      <label class="input_single"><input type="checkbox" id="SturdyRing" name="Rings" />Sturdy Ring <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/7/7e/Sturdy_Ring.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WarriorRing" name="Rings" />Warrior Ring <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/1/13/Warrior_Ring.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="RingofYoba" name="Rings" />Ring of Yoba <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/2/21/Ring_of_Yoba.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="ThornsRing" name="Rings" />Thorns Ring <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/5/5b/Thorns_Ring.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="GlowstoneRing" name="Rings" />Glowstone Ring <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/6/65/Glowstone_Ring.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="IridiumBand" name="Rings" />Iridium Band <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/7/77/Iridium_Band.png" height="24" width="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="Rings" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- EdibleItems div -->
     <div class="flex-item">
       <h2>Edible Items</h2>
-      <label><input type="checkbox" id="FieldSnack" name="EdibleItems" />Field Snack </br></label>
-      <label><input type="checkbox" id="BugSteak" name="EdibleItems" />Bug Steak </br></label>
-      <label><input type="checkbox" id="LifeElixir" name="EdibleItems" />Life Elixir </br></label>
-      <label><input type="checkbox" id="OilofGarlic" name="EdibleItems" />Oil of Garlic </br></label>
+      <label class="input_single"><input type="checkbox" id="FieldSnack" name="EdibleItems" />Field Snack <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/1/1b/Field_Snack.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="BugSteak" name="EdibleItems" />Bug Steak <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/b/b7/Bug_Steak.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="LifeElixir" name="EdibleItems" />Life Elixir <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/6/6e/Life_Elixir.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="OilofGarlic" name="EdibleItems" />Oil of Garlic <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/4/4b/Oil_of_Garlic.png" height="24" width="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="EdibleItems" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- Consumables div -->
     <div class="flex-item">
       <h2>Consumables</h2>
-      <label><input type="checkbox" id="MonsterMusk" name="Consumables" />Monster Musk </br></label>
-      <label><input type="checkbox" id="FairyDust" name="Consumables" />Fairy Dust </br></label>
-      <label><input type="checkbox" id="WarpTotemBeach" name="Consumables" />Warp Totem Beach </br></label>
-      <label><input type="checkbox" id="WarpTotemMountains" name="Consumables" />Warp Totem Mountains </br></label>
-      <label><input type="checkbox" id="WarpTotemFarm" name="Consumables" />Warp Totem Farm </br></label>
-      <label><input type="checkbox" id="WarpTotemDesert" name="Consumables" />Warp Totem Desert </br></label>
-      <label><input type="checkbox" id="WarpTotemIsland" name="Consumables" />Warp Totem Island </br></label>
-      <label><input type="checkbox" id="RainTotem" name="Consumables" />Rain Totem </br></label>
+      <label class="input_single"><input type="checkbox" id="MonsterMusk" name="Consumables" />Monster Musk <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/a/af/Monster_Musk.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="FairyDust" name="Consumables" />Fairy Dust <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/f/fc/Fairy_Dust.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WarpTotemBeach" name="Consumables" />Warp Totem Beach <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/2/2f/Warp_Totem_Beach.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WarpTotemMountains" name="Consumables" />Warp Totem
+        Mountains <img src=" https://stardewcommunitywiki.com/mediawiki/images/d/d8/Warp_Totem_Mountains.png"
+          height="24" width="24" margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WarpTotemFarm" name="Consumables" />Warp Totem Farm <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/e/e4/Warp_Totem_Farm.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WarpTotemDesert" name="Consumables" />Warp Totem Desert
+        <img src=" https://stardewcommunitywiki.com/mediawiki/images/8/83/Warp_Totem_Desert.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WarpTotemIsland" name="Consumables" />Warp Totem Island
+        <img src=" https://stardewcommunitywiki.com/mediawiki/images/b/b9/Warp_Totem_Island.png" height="24" width="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="RainTotem" name="Consumables" />Rain Totem <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/f/f7/Rain_Totem.png" height="24" width="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="Consumables" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- Lighting div -->
     <div class="flex-item">
       <h2>Lighting</h2>
-      <label><input type="checkbox" id="Torch" name="Lighting" />Torch </br></label>
-      <label><input type="checkbox" id="Campfire" name="Lighting" />Campfire </br></label>
-      <label><input type="checkbox" id="WoodenBrazier" name="Lighting" />Wooden Brazier </br></label>
-      <label><input type="checkbox" id="StoneBrazier" name="Lighting" />Stone Brazier </br></label>
-      <label><input type="checkbox" id="GoldBrazier" name="Lighting" />Gold Brazier </br></label>
-      <label><input type="checkbox" id="CarvedBrazier" name="Lighting" />Carved Brazier </br></label>
-      <label><input type="checkbox" id="StumpBrazier" name="Lighting" />Stump Brazier </br></label>
-      <label><input type="checkbox" id="BarrelBrazier" name="Lighting" />Barrel Brazier </br></label>
-      <label><input type="checkbox" id="SkullBrazier" name="Lighting" />Skull Brazier </br></label>
-      <label><input type="checkbox" id="MarbleBrazier" name="Lighting" />Marble Brazier </br></label>
-      <label><input type="checkbox" id="WoodLamppost" name="Lighting" />Wood Lamp-post </br></label>
-      <label><input type="checkbox" id="IronLamppost" name="Lighting" />Iron Lamp-post </br></label>
-      <label><input type="checkbox" id="JackOLantern" name="Lighting" />Jack-O-Lantern </br></label>
+      <label class="input_single"><input type="checkbox" id="Torch" name="Lighting" />Torch <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/b/b2/Torch.png" height="24" width="24" margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="Campfire" name="Lighting" />Campfire <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/0/01/Campfire.png" height="24" width="24"
+          margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="WoodenBrazier" name="Lighting" />Wooden Brazier <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/3/34/Wooden_Brazier.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="StoneBrazier" name="Lighting" />Stone Brazier <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/1/1a/Stone_Brazier.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="GoldBrazier" name="Lighting" />Gold Brazier <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/b/b7/Gold_Brazier.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="CarvedBrazier" name="Lighting" />Carved Brazier <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/3/3c/Carved_Brazier.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="StumpBrazier" name="Lighting" />Stump Brazier <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/f/f2/Stump_Brazier.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="BarrelBrazier" name="Lighting" />Barrel Brazier <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/7/78/Barrel_Brazier.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="SkullBrazier" name="Lighting" />Skull Brazier <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/e/e6/Skull_Brazier.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="MarbleBrazier" name="Lighting" />Marble Brazier <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/e/e0/Marble_Brazier.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WoodLamppost" name="Lighting" />Wood Lamp-post <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/c/c8/Wood_Lamp-post.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="IronLamppost" name="Lighting" />Iron Lamp-post <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/b/b0/Iron_Lamp-post.png" height="24" width="12"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="JackOLantern" name="Lighting" />Jack-O-Lantern <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/1/17/Jack-O-Lantern.png" height="24" width="24"
+          margin=right> </br></label>
+
       <br><label><input type="checkbox" id="Lighting" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- RefiningEquipment div -->
     <div class="flex-item">
       <h2>Refining Equipment</h2>
-      <label><input type="checkbox" id="CharcoalKiln" name="RefiningEquipment" />Charcoal Kiln </br></label>
-      <label><input type="checkbox" id="Crystalarium" name="RefiningEquipment" />Crystalarium </br></label>
-      <label><input type="checkbox" id="Furnace" name="RefiningEquipment" />Furnace </br></label>
-      <label><input type="checkbox" id="LightningRod" name="RefiningEquipment" />Lightning Rod </br></label>
-      <label><input type="checkbox" id="SolarPanel" name="RefiningEquipment" />Solar Panel </br></label>
-      <label><input type="checkbox" id="RecyclingMachine" name="RefiningEquipment" />Recycling Machine </br></label>
-      <label><input type="checkbox" id="SeedMaker" name="RefiningEquipment" />Seed Maker </br></label>
-      <label><input type="checkbox" id="SlimeIncubator" name="RefiningEquipment" />Slime Incubator </br></label>
-      <label><input type="checkbox" id="OstrichIncubator" name="RefiningEquipment" />Ostrich Incubator </br></label>
-      <label><input type="checkbox" id="SlimeEggPress" name="RefiningEquipment" />Slime Egg Press </br></label>
-      <label><input type="checkbox" id="Tapper" name="RefiningEquipment" />Tapper </br></label>
-      <label><input type="checkbox" id="HeavyTapper" name="RefiningEquipment" />Heavy Tapper </br></label>
-      <label><input type="checkbox" id="WormBin" name="RefiningEquipment" />Worm Bin </br></label>
-      <label><input type="checkbox" id="BoneMill" name="RefiningEquipment" />Bone Mill </br></label>
-      <label><input type="checkbox" id="GeodeCrusher" name="RefiningEquipment" />Geode Crusher </br></label>
+      <label class="input_single"><input type="checkbox" id="CharcoalKiln" name="RefiningEquipment" />Charcoal Kiln <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/7/76/Charcoal_Kiln.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="Crystalarium" name="RefiningEquipment" />Crystalarium <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/6/63/Crystalarium.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="Furnace" name="RefiningEquipment" />Furnace <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/0/0f/Furnace.png" width="12" height="24" margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="LightningRod" name="RefiningEquipment" />Lightning Rod <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/6/62/Lightning_Rod.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="SolarPanel" name="RefiningEquipment" />Solar Panel <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/5/5d/Solar_Panel.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="RecyclingMachine" name="RefiningEquipment" />Recycling
+        Machine <img src=" https://stardewcommunitywiki.com/mediawiki/images/2/26/Recycling_Machine.png" width="12"
+          height="24" margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="SeedMaker" name="RefiningEquipment" />Seed Maker <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/1/19/Seed_Maker.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="SlimeIncubator" name="RefiningEquipment" />Slime Incubator
+        <img src=" https://stardewcommunitywiki.com/mediawiki/images/c/c0/Slime_Incubator.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="OstrichIncubator" name="RefiningEquipment" />Ostrich
+        Incubator <img src=" https://stardewcommunitywiki.com/mediawiki/images/5/51/Ostrich_Incubator.png" width="12"
+          height="24" margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="SlimeEggPress" name="RefiningEquipment" />Slime Egg Press
+        <img src=" https://stardewcommunitywiki.com/mediawiki/images/7/79/Slime_Egg-Press.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="Tapper" name="RefiningEquipment" />Tapper <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/d/da/Tapper.png" width="12" height="24" margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="HeavyTapper" name="RefiningEquipment" />Heavy Tapper <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/0/0c/Heavy_Tapper.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WormBin" name="RefiningEquipment" />Worm Bin <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/7/71/Worm_Bin.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="BoneMill" name="RefiningEquipment" />Bone Mill <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/c/cc/Bone_Mill.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="GeodeCrusher" name="RefiningEquipment" />Geode Crusher <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/0/02/Geode_Crusher.png" width="12" height="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="RefiningEquipment" onclick="toggle(this)" /> Select/Unselect All
         </br></label>
     </div>
     <!-- Furniture div -->
     <div class="flex-item">
       <h2>Furniture</h2>
-      <label><input type="checkbox" id="TuboFlowers" name="Furniture" />Tub o' Flowers </br></label>
-      <label><input type="checkbox" id="WickedStatue" name="Furniture" />Wicked Statue </br></label>
-      <label><input type="checkbox" id="FluteBlock" name="Furniture" />Flute Block </br></label>
-      <label><input type="checkbox" id="DrumBlock" name="Furniture" />Drum Block </br></label>
+      <label class="input_single"><input type="checkbox" id="TuboFlowers" name="Furniture" />Tub o' Flowers <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/d/d9/Tub_o%27_Flowers.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="WickedStatue" name="Furniture" />Wicked Statue <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/4/4a/Wicked_Statue.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="FluteBlock" name="Furniture" />Flute Block <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/3/31/Flute_Block.png" width="24" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="DrumBlock" name="Furniture" />Drum Block <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/d/dc/Drum_Block.png" width="24" height="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="Furniture" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- StorageEquipment div -->
     <div class="flex-item">
       <h2>Storage Equipment</h2>
-      <label><input type="checkbox" id="Chest" name="StorageEquipment" />Chest </br></label>
-      <label><input type="checkbox" id="StoneChest" name="StorageEquipment" />Stone Chest </br></label>
+      <label class="input_single"><input type="checkbox" id="Chest" name="StorageEquipment" />Chest<img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/b/b3/Chest.png" width="12" height="24" margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="StoneChest" name="StorageEquipment" />Stone Chest<img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/1/1b/Stone_Chest.png" width="12" height="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="StorageEquipment" onclick="toggle(this)" /> Select/Unselect All
         </br></label>
     </div>
     <!-- Signs div -->
     <div class="flex-item">
       <h2>Signs</h2>
-      <label><input type="checkbox" id="WoodSign" name="Signs" />Wood Sign </br></label>
-      <label><input type="checkbox" id="StoneSign" name="Signs" />Stone Sign </br></label>
-      <label><input type="checkbox" id="DarkSign" name="Signs" />Dark Sign </br></label>
+      <label class="input_single"><input type="checkbox" id="WoodSign" name="Signs" />Wood Sign<img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/1/1b/Stone_Chest.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="StoneSign" name="Signs" />Stone Sign<img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/f/f3/Stone_Sign.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="DarkSign" name="Signs" />Dark Sign<img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/7/72/Dark_Sign.png" width="12" height="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="Signs" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- FarmingMisc div -->
     <div class="flex-item">
       <h2>Farming Misc</h2>
-      <label><input type="checkbox" id="GardenPot" name="FarmingMisc" />Garden Pot </br></label>
-      <label><input type="checkbox" id="Scarecrow" name="FarmingMisc" />Scarecrow </br></label>
-      <label><input type="checkbox" id="DeluxeScarecrow" name="FarmingMisc" />Deluxe Scarecrow </br></label>
+      <label class="input_single"><input type="checkbox" id="GardenPot" name="FarmingMisc" />Garden Pot <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/2/2c/Garden_Pot.png" width="24" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="Scarecrow" name="FarmingMisc" />Scarecrow <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/7/75/Scarecrow.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="DeluxeScarecrow" name="FarmingMisc" />Deluxe Scarecrow <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/5/59/Deluxe_Scarecrow.png" width="12" height="24"
+          margin=right> </br></label>
+
       <br><label><input type="checkbox" id="FarmingMisc" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- MiningMisc div -->
     <div class="flex-item">
       <h2>Mining Misc</h2>
-      <label><input type="checkbox" id="Staircase" name="MiningMisc" />Staircase </br></label>
-      <label><input type="checkbox" id="ExplosiveAmmo" name="MiningMisc" />Explosive Ammo </br></label>
-      <label><input type="checkbox" id="TransmuteFe" name="MiningMisc" />Transmute Fe </br></label>
-      <label><input type="checkbox" id="TransmuteAu" name="MiningMisc" />Transmute Au </br></label>
+      <label class="input_single"><input type="checkbox" id="Staircase" name="MiningMisc" />Staircase <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/8/8c/Staircase.png" width="24" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="ExplosiveAmmo" name="MiningMisc" />Explosive Ammo <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/f/f3/Explosive_Ammo.png" width="24" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="TransmuteFe" name="MiningMisc" />Transmute Fe <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/6/6c/Iron_Bar.png" width="24" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="TransmuteAu" name="MiningMisc" />Transmute Au <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/4/4e/Gold_Bar.png" width="24" height="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="MiningMisc" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
     <!-- Misc div -->
     <div class="flex-item">
       <h2>Misc</h2>
-      <label><input type="checkbox" id="MiniJukebox" name="Misc" />Mini-Jukebox </br></label>
-      <label><input type="checkbox" id="MiniObelisk" name="Misc" />Mini-Obelisk </br></label>
-      <label><input type="checkbox" id="FarmComputer" name="Misc" />Farm Computer </br></label>
-      <label><input type="checkbox" id="Hopper" name="Misc" />Hopper </br></label>
-      <label><input type="checkbox" id="CookoutKit" name="Misc" />Cookout Kit </br></label>
+      <label class="input_single"><input type="checkbox" id="MiniJukebox" name="Misc" />Mini-Jukebox <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/0/02/Mini-Jukebox.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="MiniObelisk" name="Misc" />Mini-Obelisk <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/c/c9/Mini-Obelisk.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="FarmComputer" name="Misc" />Farm Computer <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/f/f8/Farm_Computer.png" width="12" height="24"
+          margin=right> </br></label>
+      <label class="input_single"><input type="checkbox" id="Hopper" name="Misc" />Hopper <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/8/81/Hopper.png" width="12" height="24" margin=right>
+        </br></label>
+      <label class="input_single"><input type="checkbox" id="CookoutKit" name="Misc" />Cookout Kit <img
+          src=" https://stardewcommunitywiki.com/mediawiki/images/9/91/Cookout_Kit.png" width="24" height="24"
+          margin=right> </br></label>
       <br><label><input type="checkbox" id="Misc" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
   </div>

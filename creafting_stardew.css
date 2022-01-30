@@ -20,15 +20,15 @@
 .flex-item {
   display: flex;
   flex-basis: auto;
-columns: 20px;
-  margin: 10px;
+  columns: 10px;
+  margin: 50px;
   border-radius: 15px;
   border: 2px solid #283044;
   background-color: #bfa89e;
   text-indent: 05px;
   box-sizing: border-box;
-  padding-left: 15px;
-      padding-bottom: 15px;
+  /* padding-left: 15px; */
+      /* padding-bottom: 15px; */
   padding: 0.1em 1em 0.5em 1em;
   column-count: auto;
   font-family: stardew_menu;
@@ -41,6 +41,7 @@ columns: 20px;
   font-family: stardew_menu;
   flex-flow: row-wrap;
   columns: 200px;
+  margin-left: 50px;
   
 }
 
@@ -78,12 +79,12 @@ flex-basis: content;
 }
 
 .button {
-
+  display: flex;
   flex-basis: auto;
   font-family: stardew_menu;
   font-size: larger;
-  border-radius: 15px;
-  margin: 10px;
+  border-radius: 10px;
+  margin:30px;
 }
 
 body {
@@ -103,4 +104,17 @@ h2 {
   font-size: 140%;
 }
 
+p {
+  display: flex;
+  flex-basis: auto;
+  margin: 25px;
+  border-radius: 15px;
+  border: 2px solid #283044;
+  background-color: #ddcac2;
+  box-sizing: border-box;
+  padding: 15px;
+      font-size: 100%;
+  /* padding: 0.1em 1em 0.5em 1em; */
+  font-family: stardew_menu;
+}
 /* </style> */
