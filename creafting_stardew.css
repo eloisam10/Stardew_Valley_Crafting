@@ -14,25 +14,25 @@
   flex-wrap: wrap;
   flex-flow: column-wrap;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .flex-item {
+  display: flex;
   flex-basis: auto;
-  order: 5;
-  float: left;
-  width: 17%;
+columns: 20px;
   margin: 10px;
   border-radius: 15px;
   border: 2px solid #283044;
   background-color: #bfa89e;
-  text-indent: 15px;
+  text-indent: 05px;
   box-sizing: border-box;
-  /* padding-left: 15px;
-      padding-bottom: 15px; */
+  padding-left: 15px;
+      padding-bottom: 15px;
   padding: 0.1em 1em 0.5em 1em;
   column-count: auto;
   font-family: stardew_menu;
+  flex-direction: column;
 }
 
 .results {
@@ -40,18 +40,52 @@
   padding: 1em 1em 0.5em 1em;
   font-family: stardew_menu;
   flex-flow: row-wrap;
+  columns: 200px;
+  
 }
+
+/* .row_box_items {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse; */
+
+
+
+
+.images {
+  display: flex;
+  align-self: left;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* flex: 1; */
+  justify-content: flex-start;
+flex-basis: content;
+  flex-shrink: 0;
+  align-content: flex-end;
+
+}
+
+/* label{
+  padding-top: 10px;
+  /* display: flex; */
+  
+  label img {
+    margin-left: 10px;
+  }
+.input_single {
+  display: flex;
+}
+
 .button {
+
   flex-basis: auto;
   font-family: stardew_menu;
   font-size: larger;
+  border-radius: 15px;
+  margin: 10px;
 }
 
-/* .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    } */
 body {
   /* margin: auto; */
   background-color: rgb(180, 187, 192);

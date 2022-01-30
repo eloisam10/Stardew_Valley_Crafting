@@ -7,53 +7,110 @@
 
 <body>
   <h1>Stardew Valley Crafting Calculator</h1>
-  <h2>Chose what craft items you want to make:</h2>
+  <h2 style="text-indent: 45px;">Chose what craft items you want to make:</h2>
+  <!-- Button for calculate materials -->
+  <button type="button" id="button_calculate" class="button">Calculate materials</button>
+  <!-- Results div -->
+  <div id="results" class="results">
+  </div>
   <div class="flex-container">
     <!-- Bombs div -->
-    <!-- Button for calculate materials -->
-    <button type="button" id="button_calculate" class="button">Calculate materials</button>
-    <!-- Results div -->
-    <div id="results" class="results">
-    </div>
     <div class="flex-item">
       <h2>Bombs</h2>
-      <label><input type="checkbox" id="CherryBomb" name="Bombs" />Cherry Bomb </br></label>
-      <label><input type="checkbox" id="Bomb" name="Bombs" />Bomb</br></label>
-      <label><input type="checkbox" id="MegaBomb" name="Bombs" />Mega Bomb</br></label>
-      <br><label><input type="checkbox" id="Bombs" onclick="toggle(this)" /> Select/Unselect All </br></label>
+      <label class="input_single"><input type="checkbox" id="CherryBomb" name="Bombs" />Cherry Bomb<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/1/1b/Cherry_Bomb.png" height="24"
+          width="24" margin=right></br></label>
+      <label class="input_single"><input type="checkbox" id="Bomb" name="Bombs" />Bomb<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/3/3b/Bomb.png" height="24" width="24"></br></label>
+      <label class="input_single"><input type="checkbox" id="MegaBomb" name="Bombs" />Mega Bomb<img
+          src="https://stardewcommunitywiki.com/mediawiki/images/4/4f/Mega_Bomb.png" height="24" width="24">
+        </br></label>
+      <br><label><input type="checkbox" id="Bombs" onclick="toggle(this)" /> Select/Unselect All
+        </br></label>
     </div>
+
     <!-- Gates div -->
     <div class="flex-item">
       <h2>Gates</h2>
-      <label><input type="checkbox" id="Gate" name="Gates" />Gate</br></label>
-      <label><input type="checkbox" id="WoodFence" name="Gates" />Wood Fence</br></label>
-      <label><input type="checkbox" id="StoneFence" name="Gates" />Stone Fence</br></label>
-      <label><input type="checkbox" id="IronFence" name="Gates" />Iron Fence</br></label>
-      <label><input type="checkbox" id="HardwoodFence" name="Gates" />Hardwood Fence</br></label>
-      <br><label><input type="checkbox" id="Gates" onclick="toggle(this)" /> Select/Unselect All </br></label>
+      <div class="row_box_items">
+        <div class="images">
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/9/94/Gate.png" height="24" width="24"></div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/1/1e/Wood_Fence.png" height="24" width="24">
+          </div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/2/2d/Stone_Fence.png" height="24" width="24">
+          </div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/9/9d/Iron_Fence.png" height="24" width="24">
+          </div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/5/5c/Hardwood_Fence.png" height="24"
+              width="24"></div>
+        </div>
+        <div class="inputs">
+          <label><input type="checkbox" id="Gate" name="Gates" />Gate</br></label>
+          <label><input type="checkbox" id="WoodFence" name="Gates" />Wood Fence</br></label>
+          <label><input type="checkbox" id="StoneFence" name="Gates" />Stone Fence</br></label>
+          <label><input type="checkbox" id="IronFence" name="Gates" />Iron Fence</br></label>
+          <label><input type="checkbox" id="HardwoodFence" name="Gates" />Hardwood Fence</br></label>
+          <br><label><input type="checkbox" id="Gates" onclick="toggle(this)" /> Select/Unselect All </br></label>
+        </div>
+      </div>
     </div>
     <!-- Sprinklers div -->
     <div class="flex-item">
       <h2>Sprinklers</h2>
-      <label><input type="checkbox" id="Sprinkler" name="Sprinklers" />Sprinkler</br></label>
-      <label><input type="checkbox" id="QualitySprinkler" name="Sprinklers" />Quality Sprinkler</br></label>
-      <label><label><input type="checkbox" id="IridiumSprinkler" name="Sprinklers" />Iridium Sprinkler</br></label>
-        <br><label><input type="checkbox" id="Sprinklers" onclick="toggle(this)" /> Select/Unselect All </br></label>
+      <div class="row_box_items">
+        <div class="images">
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/0/08/Sprinkler.png" height="24" width="24">
+          </div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/a/af/Quality_Sprinkler.png" height="24"
+              width="24"></div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/9/90/Iridium_Sprinkler.png" height="24"
+              width="24">
+          </div>
+        </div>
+        <div class="inputs">
+          <label><input type="checkbox" id="Sprinkler" name="Sprinklers" />Sprinkler</br></label>
+          <label><input type="checkbox" id="QualitySprinkler" name="Sprinklers" />Quality Sprinkler</br></label>
+          <label><label><input type="checkbox" id="IridiumSprinkler" name="Sprinklers" />Iridium Sprinkler</br></label>
+            <br><label><input type="checkbox" id="Sprinklers" onclick="toggle(this)" /> Select/Unselect All
+              </br></label>
+        </div>
+      </div>
     </div>
     <!-- Artisan Equipment div -->
     <div class="flex-item">
       <h2>Artisan Equipment</h2>
-      <label><input type="checkbox" id="MayonnaiseMachine" name="ArtisanEquipment" />Mayonnaise Machine
-        </br></label>
-      <label><input type="checkbox" id="BeeHouse" name="ArtisanEquipment" />Bee House</br></label>
-      <label><input type="checkbox" id="PreservesJar" name="ArtisanEquipment" />Preserves Jar</br></label>
-      <label><input type="checkbox" id="CheesePress" name="ArtisanEquipment" />Cheese Press</br></label>
-      <label><input type="checkbox" id="Loom" name="ArtisanEquipment" />Loom</br></label>
-      <label><input type="checkbox" id="Keg" name="ArtisanEquipment" />Keg</br></label>
-      <label><input type="checkbox" id="OilMaker" name="ArtisanEquipment" />Oil Maker</br></label>
-      <label><input type="checkbox" id="Cask" name="ArtisanEquipment" />Cask</br></label>
-      <br><label><input type="checkbox" id="ArtisanEquipment" onclick="toggle(this)" /> Select/Unselect All
-        </br></label>
+      <div class="row_box_items">
+        <div class="images">
+          <div><img src="	https://stardewcommunitywiki.com/mediawiki/images/e/ef/Mayonnaise_Machine.png" height="24"
+              width="12">
+          </div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/c/ce/Bee_House.png" height="24" width="12">
+          </div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/1/1e/Preserves_Jar.png" height="24"
+              width="12"></div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/7/79/Cheese_Press.png" height="24"
+              width="12"></div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/3/3b/Loom.png" height="24" width="12"></div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/7/7c/Keg.png" height="24" width="12"></div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/c/c5/Oil_Maker.png" height="24" width="12">
+          </div>
+          <div><img src="https://stardewcommunitywiki.com/mediawiki/images/7/7c/Cask.png" height="24" width="12">
+          </div>
+        </div>
+        <div class="inputs">
+          <label><input type="checkbox" id="MayonnaiseMachine" name="ArtisanEquipment" />Mayonnaise Machine
+            </br></label>
+          <label><input type="checkbox" id="BeeHouse" name="ArtisanEquipment" />Bee House</br></label>
+          <label><input type="checkbox" id="PreservesJar" name="ArtisanEquipment" />Preserves Jar</br></label>
+          <label><input type="checkbox" id="CheesePress" name="ArtisanEquipment" />Cheese Press</br></label>
+          <label><input type="checkbox" id="Loom" name="ArtisanEquipment" />Loom</br></label>
+          <label><input type="checkbox" id="Keg" name="ArtisanEquipment" />Keg</br></label>
+          <label><input type="checkbox" id="OilMaker" name="ArtisanEquipment" />Oil Maker</br></label>
+          <label><input type="checkbox" id="Cask" name="ArtisanEquipment" />Cask</br></label>
+          <br><label><input type="checkbox" id="ArtisanEquipment" onclick="toggle(this)" /> Select/Unselect All
+            </br></label>
+        </div>
+      </div>
     </div>
     <!-- Fertilizers div -->
     <div class="flex-item">
@@ -131,7 +188,7 @@
     </div>
     <!-- EdibleItems div -->
     <div class="flex-item">
-      <h2>EdibleItems</h2>
+      <h2>Edible Items</h2>
       <label><input type="checkbox" id="FieldSnack" name="EdibleItems" />Field Snack </br></label>
       <label><input type="checkbox" id="BugSteak" name="EdibleItems" />Bug Steak </br></label>
       <label><input type="checkbox" id="LifeElixir" name="EdibleItems" />Life Elixir </br></label>
@@ -171,7 +228,7 @@
     </div>
     <!-- RefiningEquipment div -->
     <div class="flex-item">
-      <h2>RefiningEquipment</h2>
+      <h2>Refining Equipment</h2>
       <label><input type="checkbox" id="CharcoalKiln" name="RefiningEquipment" />Charcoal Kiln </br></label>
       <label><input type="checkbox" id="Crystalarium" name="RefiningEquipment" />Crystalarium </br></label>
       <label><input type="checkbox" id="Furnace" name="RefiningEquipment" />Furnace </br></label>
@@ -201,7 +258,7 @@
     </div>
     <!-- StorageEquipment div -->
     <div class="flex-item">
-      <h2>StorageEquipment</h2>
+      <h2>Storage Equipment</h2>
       <label><input type="checkbox" id="Chest" name="StorageEquipment" />Chest </br></label>
       <label><input type="checkbox" id="StoneChest" name="StorageEquipment" />Stone Chest </br></label>
       <br><label><input type="checkbox" id="StorageEquipment" onclick="toggle(this)" /> Select/Unselect All
@@ -217,7 +274,7 @@
     </div>
     <!-- FarmingMisc div -->
     <div class="flex-item">
-      <h2>FarmingMisc</h2>
+      <h2>Farming Misc</h2>
       <label><input type="checkbox" id="GardenPot" name="FarmingMisc" />Garden Pot </br></label>
       <label><input type="checkbox" id="Scarecrow" name="FarmingMisc" />Scarecrow </br></label>
       <label><input type="checkbox" id="DeluxeScarecrow" name="FarmingMisc" />Deluxe Scarecrow </br></label>
@@ -225,7 +282,7 @@
     </div>
     <!-- MiningMisc div -->
     <div class="flex-item">
-      <h2>MiningMisc</h2>
+      <h2>Mining Misc</h2>
       <label><input type="checkbox" id="Staircase" name="MiningMisc" />Staircase </br></label>
       <label><input type="checkbox" id="ExplosiveAmmo" name="MiningMisc" />Explosive Ammo </br></label>
       <label><input type="checkbox" id="TransmuteFe" name="MiningMisc" />Transmute Fe </br></label>
@@ -242,6 +299,7 @@
       <label><input type="checkbox" id="CookoutKit" name="Misc" />Cookout Kit </br></label>
       <br><label><input type="checkbox" id="Misc" onclick="toggle(this)" /> Select/Unselect All </br></label>
     </div>
+  </div>
   </div>
 </body>
 <script src="./crafiting_stardew.js"></script>
